@@ -11,7 +11,7 @@ const Bird = ({ birdBottom, birdLeft }: BirdProps) => {
 
   return (
     <Image
-      source={require('../assets/images/bird1.png')}
+      source={require('../../assets/images/bird1.png')}
       resizeMode="contain"
       style={{
         position: 'absolute',
