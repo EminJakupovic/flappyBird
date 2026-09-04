@@ -1,5 +1,4 @@
-import { View } from 'react-native';
-
+import { Image } from 'react-native';
 
 type BirdProps = {
   birdBottom: number;
@@ -11,10 +10,11 @@ const Bird = ({ birdBottom, birdLeft }: BirdProps) => {
   const birdHeight = 60;
 
   return (
-    <View
+    <Image
+      source={require('../assets/images/bird1.png')}
+      resizeMode="contain"
       style={{
         position: 'absolute',
-        backgroundColor: 'blue',
         width: birdWidth,
         height: birdHeight,
         left: birdLeft - birdWidth / 2,

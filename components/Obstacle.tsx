@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { Image } from 'react-native';
 
 type ObstacleProps = {
   color: string;
@@ -10,7 +10,6 @@ type ObstacleProps = {
 };
 
 const Obstacle = ({
-  color,
   obstacleWidth,
   obstacleHeight,
   randomBottom,
@@ -19,25 +18,35 @@ const Obstacle = ({
 }: ObstacleProps) => {
   return (
     <>
-      <View
+      {/* Top pipe */}
+      <Image
+        source={require('../assets/images/pipe.png')}
+        resizeMode="stretch"
         style={{
           position: 'absolute',
-          backgroundColor: color,
           width: obstacleWidth,
           height: 500,
           left: obstaclesLeft,
-          bottom: randomBottom + obstacleHeight + gap,
+          bottom:
+            randomBottom +
+            obstacleHeight +
+            gap,
+          transform: [{ rotate: '180deg' }],
         }}
       />
 
-      <View
+      {/* Bottom pipe */}
+      <Image
+        source={require('../assets/images/pipe.png')}
+        resizeMode="stretch"
         style={{
           position: 'absolute',
-          backgroundColor: color,
           width: obstacleWidth,
-          height: obstacleHeight,
+          height:
+            randomBottom +
+            obstacleHeight,
           left: obstaclesLeft,
-          bottom: randomBottom,
+          bottom: 0,
         }}
       />
     </>
